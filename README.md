@@ -10,7 +10,7 @@ With ExAPI you can control many contents of Live2DViewerEX such as model, backgr
 ### Use Case / 使用场景
 * When you get a new mail or message, you can push notification to Live2DViewerEX instead of system notification center, a text bubble will show the message you pushed.<br>
 当您收到一个新邮件或消息时，您可以将通知推送到Live2DViewerEX，利用文本气泡展示您收到的推送消息。
-* You can send system resourse usage data to Live2DViewerEX, which will prepare a widget UI to show the data.<br><br>
+* You can send system resourse usage data to Live2DViewerEX, which will prepare a widget UI to show the data.<br>
 您可以发送系统资源使用数据至Live2DViewerEX，那里会提供一个小部件来展示这些数据。
 * You can send weather data to Live2DViewerEX, and control rain effect or sonw effect to fit current weather.<br>
 您可以发送天气数据至Live2DViewerEX，并可以控制下雨或下雪特效来适配当前天气状况。
