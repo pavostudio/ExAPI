@@ -18,6 +18,7 @@ With ExAPI you can control many contents of Live2DViewerEX such as model, backgr
 Please refer to https://github.com/pavostudio/ExAPI/wiki
 
 
+***
 ### 关于ExAPI
 ExAPI是一个基于Live2DViewerEX的WebSocket API组
 
