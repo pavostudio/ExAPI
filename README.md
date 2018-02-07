@@ -1,10 +1,9 @@
 # ExAPI
 
 ### About ExAPI
-ExAPI is WebSocket APIs for Live2DViewerEX. 
-
-### What can ExAPI do
+ExAPI is WebSocket APIs for Live2DViewerEX. <br>
 With ExAPI you can control many contents of Live2DViewerEX such as model, background, effect, text bubble...
+
 
 ### Use Case
 * When you get a new mail or message, you can push notification to Live2DViewerEX instead of system notification center, a text bubble will show the message you pushed.
@@ -20,10 +19,9 @@ Please refer to https://github.com/pavostudio/ExAPI/wiki
 
 ***
 ### 关于ExAPI
-ExAPI是一个基于Live2DViewerEX的WebSocket API组
-
-### ExAPI能做什么
+ExAPI是一个基于Live2DViewerEX的WebSocket API组 <br>
 通过ExAPI您可以控制许多Live2DViewerEX的内容，比如模型、背景、特效、气泡等等
+
 
 ### 使用场景
 * 当您收到一个新邮件或消息时，您可以将通知推送到Live2DViewerEX，利用文本气泡展示您收到的推送消息。
