@@ -13,7 +13,7 @@ With ExAPI you can control many contents of Live2DViewerEX such as model, backgr
 * You can use Google Voice, Siri and such to recognise voice -> translate the voice to text or choices -> send to Live2DViewerEX -> show text and choices.
 * ...
 
-### Quick Start
+### How To Start
 Please refer to https://github.com/pavostudio/ExAPI/wiki
 
 
@@ -31,5 +31,5 @@ ExAPI是一个基于Live2DViewerEX的WebSocket API组 <br>
 * 您可以使用Google Voice、Siri或其应用来识别语音，转换成文本或者选择项，发送到Live2DViewerEX并展示这些文本和选择项。
 * ...
 
-### 快速开始
+### 如何开始
 请参考 https://github.com/pavostudio/ExAPI/wiki
