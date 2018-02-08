@@ -10,7 +10,7 @@ With ExAPI you can control many contents of Live2DViewerEX such as model, backgr
 * You can send system resourse usage data to Live2DViewerEX, which will prepare a widget UI to show the data.
 * You can send weather data to Live2DViewerEX, and control rain effect or sonw effect to fit current weather.
 * You can write your background slideshow software and set background file with ExAPI.
-* You can use Google Voice, Siri and such to recognise voice -> translate the voice to text or choices -> send to Live2DViewerEX -> show text and choices.
+* You can use Google Voice, Siri and such in your software to recognise voice, then translate the voice to text or choices and send to Live2DViewerEX to show text and choices.
 * ...
 
 ### How To Start
@@ -28,7 +28,7 @@ ExAPI是一个基于Live2DViewerEX的WebSocket API组 <br>
 * 您可以发送系统资源使用数据至Live2DViewerEX，那里会提供一个小部件来展示这些数据。
 * 您可以发送天气数据至Live2DViewerEX，并可以控制下雨或下雪特效来适配当前天气状况。
 * 您可以编写您自己的背景幻灯片程序，通过ExAPI在Live2DViewerEX里替换背景。
-* 您可以使用Google Voice、Siri或其应用来识别语音，转换成文本或者选择项，发送到Live2DViewerEX并展示这些文本和选择项。
+* 您可以在您的软件内集成Google Voice、Siri或其应用来识别语音，然后转换成文本或者选择项，发送到Live2DViewerEX并展示这些文本和选择项。
 * ...
 
 ### 如何开始
