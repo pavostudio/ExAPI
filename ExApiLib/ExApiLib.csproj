@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ExApiLib</RootNamespace>
     <AssemblyName>ExApiLib</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -57,7 +57,7 @@
     <Compile Include="LocalMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoteMessage.cs" />
-    <Compile Include="entity\ResourceMonitorEntity.cs" />
+    <Compile Include="entity\ComputerEntity.cs" />
     <Compile Include="Messenger.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using PavoStudio.ExApi;
 
 namespace ExAPI
@@ -13,11 +12,11 @@ namespace ExAPI
         {
             Messenger.AddListener(OnMessage, LocalMsg.OnOpen, LocalMsg.OnClose, LocalMsg.OnError);
 
-            ExClient.Instance.Connect();
+            ExClient.Instance.Start();
             Console.ReadLine();
 
             Messenger.RemoveListener(OnMessage, LocalMsg.OnOpen, LocalMsg.OnClose, LocalMsg.OnError);
-            ExClient.Instance.Close();
+            ExClient.Instance.Stop();
         }
 
         static void OnMessage(BaseMessage bm) {
