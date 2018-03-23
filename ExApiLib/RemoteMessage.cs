@@ -15,7 +15,14 @@ namespace PavoStudio.ExApi
 
         public override T GetData<T>()
         {
-            return token != null ? token.Value<T>() : default(T);
+            try
+            {
+                return token != null ? token.ToObject<T>() : default(T);
+            }
+            catch (Exception e)
+            {
+                return default(T);
+            }
         }
 
         public void Send()

@@ -15,7 +15,14 @@ namespace PavoStudio.ExApi
 
         public override T GetData<T>()
         {
-            return (T)data;
+            try
+            {
+                return data == null ? default(T) : (T)data;
+            }
+            catch (Exception e)
+            {
+                return default(T);
+            }
         }
 
         public static void Send(int msg, object data = null)
