@@ -7,5 +7,7 @@ namespace PavoStudio.ExApi
     {
         public int id;// index of model
         public string file;// model.json file path
+        public string mtn;// motion to start, 'group:motion'
+        public int expId;// index of expression
     }
 }

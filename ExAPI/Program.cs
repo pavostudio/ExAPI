@@ -22,7 +22,9 @@ namespace ExAPI
         static void OnMessage(BaseMessage bm) {
             switch (bm.msg) {
                 case LocalMsg.OnOpen:
-                    ApiTest.SetBackground();
+                    Console.WriteLine("Connection Open");
+                    //ApiTest.SetBackground();
+                    ApiTest.NextExpression();
                     break;
                 case LocalMsg.OnError:
                 case LocalMsg.OnClose:

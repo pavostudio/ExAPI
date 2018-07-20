@@ -18,7 +18,7 @@ class ApiTest
     {
         string str = "http://bing.com";
 
-        //string str = "D:\\Wallpaper\\Slideshow\\yande.re 424111 landscape niko_p signed wallpaper.jpg";
+        //string str = "D:\\Wallpaper\\Slideshow\\wallpaper.jpg";
         RemoteMessage.Send(Msg.SetBackground, str);
     }
 
@@ -27,21 +27,46 @@ class ApiTest
         RemoteMessage.Send(Msg.RemoveModel, 1);
     }
 
+    public static void StartMotion()
+    {
+        ModelEntity entity = new ModelEntity();
+        entity.id = 0;
+        entity.mtn = "tap";
+
+        RemoteMessage.Send(Msg.StartMotion, entity);
+    }
+
+    public static void SetExpression()
+    {
+        ModelEntity entity = new ModelEntity();
+        entity.id = 0;
+        entity.expId = 1;
+
+        RemoteMessage.Send(Msg.SetExpression, entity);
+    }
+
+    public static void NextExpression()
+    {
+        RemoteMessage.Send(Msg.NextExpression, 0);
+    }
+
+    public static void ClearExpression()
+    {
+        RemoteMessage.Send(Msg.ClearExpression, 0);
+    }
+
     public static void SetEffect()
     {
-        Console.WriteLine("SetEffect: " + 100100);
         RemoteMessage.Send(Msg.SetEffect, 100100);
     }
 
     public static void AddEffect()
     {
-        Console.WriteLine("AddEffect: " + 100100);
         RemoteMessage.Send(Msg.AddEffect, 100100);
     }
 
     public static void RemoveEffect()
     {
-        Console.WriteLine("RemoveEffect: " + 100100);
         RemoteMessage.Send(Msg.RemoveEffect, 100100);
     }
 }
