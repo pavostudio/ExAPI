@@ -10,25 +10,38 @@ namespace ExAPI
     {
         static void Main(string[] args)
         {
-            Messenger.AddListener(OnMessage, LocalMsg.OnOpen, LocalMsg.OnClose, LocalMsg.OnError);
+            Messenger.AddListener(OnMessage, LocalMsg.OnOpen, LocalMsg.OnClose, LocalMsg.OnError, Msg.OnModelEvent);
 
             ExClient.Instance.Start();
             Console.ReadLine();
 
-            Messenger.RemoveListener(OnMessage, LocalMsg.OnOpen, LocalMsg.OnClose, LocalMsg.OnError);
+            Messenger.RemoveListener(OnMessage, LocalMsg.OnOpen, LocalMsg.OnClose, LocalMsg.OnError, Msg.OnModelEvent);
             ExClient.Instance.Stop();
         }
 
-        static void OnMessage(BaseMessage bm) {
-            switch (bm.msg) {
+        static void OnMessage(BaseMessage bm)
+        {
+            switch (bm.msg)
+            {
                 case LocalMsg.OnOpen:
                     Console.WriteLine("Connection Open");
                     //ApiTest.SetBackground();
-                    ApiTest.NextExpression();
+                    //ApiTest.NextExpression();
+                    ApiTest.RegisterModelEventListener();
+                    //ApiTest.SetPosition();
+                    ApiTest.StartMotion(0, "tap_head");
+                    //ApiTest.StartMotion(1, "motions/haru_normal_01.mtn");
                     break;
                 case LocalMsg.OnError:
                 case LocalMsg.OnClose:
                     Environment.Exit(0);
+                    break;
+                case Msg.OnModelEvent:
+                    ModelEvent evt = bm.GetData<ModelEvent>();
+                    if (evt != null)
+                        Console.WriteLine(evt.ToString());
+
+                    ApiTest.UnregisterModelEventListener();
                     break;
             }
         }

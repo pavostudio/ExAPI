@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="BaseMessage.cs" />
     <Compile Include="entity\ModelEntity.cs" />
+    <Compile Include="entity\ModelEvent.cs" />
     <Compile Include="entity\TextBubbleEntity.cs" />
     <Compile Include="ExClient.cs" />
     <Compile Include="Msg.cs" />

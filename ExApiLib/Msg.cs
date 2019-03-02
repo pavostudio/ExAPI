@@ -4,6 +4,9 @@ namespace PavoStudio.ExApi
 {
     public class Msg
     {
+        public const int RegisterModelEventListener = 10000;
+        public const int UnregisterModelEventListener = 10001;
+        public const int OnModelEvent = 10002;
         public const int ShowTextBubble = 11000;
         public const int SetBackground = 12000;
         public const int Set360Background = 12100;
@@ -13,6 +16,7 @@ namespace PavoStudio.ExApi
         public const int SetExpression = 13300;
         public const int NextExpression = 13301;
         public const int ClearExpression = 13302;
+        public const int SetPosition = 13400;
         public const int SetEffect = 14000;
         public const int AddEffect = 14100;
         public const int RemoveEffect = 14200;

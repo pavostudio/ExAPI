@@ -6,6 +6,16 @@ using PavoStudio.ExApi;
 
 class ApiTest
 {
+    public static void RegisterModelEventListener()
+    {
+        RemoteMessage.Send(Msg.RegisterModelEventListener);
+    }
+
+    public static void UnregisterModelEventListener()
+    {
+        RemoteMessage.Send(Msg.UnregisterModelEventListener);
+    }
+
     public static void SetModel()
     {
         ModelEntity entity = new ModelEntity();
@@ -27,13 +37,24 @@ class ApiTest
         RemoteMessage.Send(Msg.RemoveModel, 1);
     }
 
-    public static void StartMotion()
+    public static void StartMotion(int type, string mtn)
     {
         ModelEntity entity = new ModelEntity();
         entity.id = 0;
-        entity.mtn = "tap";
+        entity.type = type;
+        entity.mtn = mtn;
 
         RemoteMessage.Send(Msg.StartMotion, entity);
+    }
+
+    public static void SetPosition()
+    {
+        ModelEntity entity = new ModelEntity();
+        entity.id = 0;
+        entity.posX = 200;
+        entity.posY = 200;
+
+        RemoteMessage.Send(Msg.SetPosition, entity);
     }
 
     public static void SetExpression()
