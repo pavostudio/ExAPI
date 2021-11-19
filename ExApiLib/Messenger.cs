@@ -95,7 +95,7 @@ namespace PavoStudio.ExApi
             if (msg == 0)
                 return;
 
-            OnMsgReceive(new RemoteMessage(msg, obj["data"]));
+            OnMsgReceive(new RemoteMessage(msg, GetValue<int>(obj["msgId"], 0), obj["data"]));
         }
 
         private static T GetValue<T>(JToken token, T defaultValue)

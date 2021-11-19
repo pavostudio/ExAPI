@@ -9,7 +9,9 @@ namespace PavoStudio.ExApi
         public const int OnModelEvent = 10002;
         public const int ShowTextBubble = 11000;
         public const int SetBackground = 12000;
+        public const int SetBackgroundV2 = 12010;
         public const int Set360Background = 12100;
+        public const int Set360BackgroundV2 = 12110;
         public const int SetModel = 13000;
         public const int RemoveModel = 13100;
         public const int StartMotion = 13200;

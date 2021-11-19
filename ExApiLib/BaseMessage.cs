@@ -5,6 +5,7 @@ namespace PavoStudio.ExApi
     public abstract class BaseMessage
     {
         public int msg;
+        public int msgId;
 
         public int IntValue
         {
@@ -38,9 +39,10 @@ namespace PavoStudio.ExApi
             }
         }
 
-        public BaseMessage(int msg)
+        public BaseMessage(int msg, int msgId)
         {
             this.msg = msg;
+            this.msgId = msgId;
         }
 
         public abstract T GetData<T>();

@@ -8,7 +8,7 @@ namespace PavoStudio.ExApi
     {
         public object data;
 
-        public LocalMessage(int msg, object data) : base(msg)
+        public LocalMessage(int msg, object data) : base(msg, 0)
         {
             this.data = data;
         }

@@ -8,12 +8,22 @@ class ApiTest
 {
     public static void RegisterModelEventListener()
     {
-        RemoteMessage.Send(Msg.RegisterModelEventListener);
+        RemoteMessage.Send(Msg.RegisterModelEventListener, 0);
     }
 
     public static void UnregisterModelEventListener()
     {
-        RemoteMessage.Send(Msg.UnregisterModelEventListener);
+        RemoteMessage.Send(Msg.UnregisterModelEventListener, 0);
+    }
+
+    public static void ShowTextBubble()
+    {
+        TextBubbleEntity entity = new TextBubbleEntity();
+        entity.id = 0;
+        entity.text = "Test";
+        entity.choices = new string[] { "Choice 1", "Choice 2" };
+
+        RemoteMessage.Send(Msg.ShowTextBubble, 1, entity);
     }
 
     public static void SetModel()
@@ -21,15 +31,19 @@ class ApiTest
         ModelEntity entity = new ModelEntity();
         entity.id = 1;
         entity.file = "E:\\Projects\\Live2D\\Resources\\Live2DResource\\Models\\Sample2\\wanko\\wanko.model.json";
-        RemoteMessage.Send(Msg.SetModel, entity);
+        RemoteMessage.Send(Msg.SetModel, 2, entity);
     }
 
     public static void SetBackground()
     {
-        string str = "http://bing.com";
+        var entity = new BGEntity()
+        {
+            id = 1,
+            file = "http://bing.com"
+        };
 
         //string str = "D:\\Wallpaper\\Slideshow\\wallpaper.jpg";
-        RemoteMessage.Send(Msg.SetBackground, str);
+        RemoteMessage.Send(Msg.SetBackgroundV2, 3, entity);
     }
 
     public static void RemoveModel()
@@ -44,17 +58,17 @@ class ApiTest
         entity.type = type;
         entity.mtn = mtn;
 
-        RemoteMessage.Send(Msg.StartMotion, entity);
+        RemoteMessage.Send(Msg.StartMotion, 4, entity);
     }
 
     public static void SetPosition()
     {
         ModelEntity entity = new ModelEntity();
         entity.id = 0;
-        entity.posX = 200;
-        entity.posY = 200;
+        entity.posX = 0;
+        entity.posY = 100;
 
-        RemoteMessage.Send(Msg.SetPosition, entity);
+        RemoteMessage.Send(Msg.SetPosition, 5, entity);
     }
 
     public static void SetExpression()
@@ -63,7 +77,7 @@ class ApiTest
         entity.id = 0;
         entity.expId = 1;
 
-        RemoteMessage.Send(Msg.SetExpression, entity);
+        RemoteMessage.Send(Msg.SetExpression, 6, entity);
     }
 
     public static void NextExpression()

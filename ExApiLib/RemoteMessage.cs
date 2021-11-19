@@ -8,7 +8,7 @@ namespace PavoStudio.ExApi
     {
         private JToken token;
 
-        public RemoteMessage(int msg, JToken token) : base(msg)
+        public RemoteMessage(int msg, int msgId, JToken token) : base(msg, msgId)
         {
             this.token = token;
         }
@@ -29,14 +29,15 @@ namespace PavoStudio.ExApi
         {
             JObject obj = new JObject();
             obj.Add("msg", JToken.FromObject(msg));
+            obj.Add("msgId", JToken.FromObject(msgId));
             if (token != null)
                 obj.Add("data", token);
             Messenger.SendUnityMessage(obj.ToString());
         }
 
-        public static void Send(int msg, object data = null)
+        public static void Send(int msg, int msgId, object data = null)
         {
-            new RemoteMessage(msg, data == null ? null : JToken.FromObject(data)).Send();
+            new RemoteMessage(msg, msgId, data == null ? null : JToken.FromObject(data)).Send();
         }
 
     }
