@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.IO;
 using PavoStudio.ExApi;
 
 class ApiTest
@@ -18,19 +18,23 @@ class ApiTest
 
     public static void ShowTextBubble()
     {
-        TextBubbleEntity entity = new TextBubbleEntity();
-        entity.id = 0;
-        entity.text = "Test";
-        entity.choices = new string[] { "Choice 1", "Choice 2" };
+        var entity = new TextBubbleEntity()
+        {
+            id = 0,
+            text = "Test",
+            choices = new string[] { "Choice 1", "Choice 2" }
+        };
 
         RemoteMessage.Send(Msg.ShowTextBubble, 1, entity);
     }
 
     public static void SetModel()
     {
-        ModelEntity entity = new ModelEntity();
-        entity.id = 1;
-        entity.file = "E:\\Projects\\Live2D\\Resources\\Live2DResource\\Models\\Sample2\\wanko\\wanko.model.json";
+        var entity = new ModelEntity()
+        {
+            id = 1,
+            file = "E:\\Live2D\\wanko\\wanko.model.json"
+        };
         RemoteMessage.Send(Msg.SetModel, 2, entity);
     }
 
@@ -40,9 +44,9 @@ class ApiTest
         {
             id = 1,
             file = "http://bing.com"
+            // file="D:\\Wallpaper\\Slideshow\\wallpaper.jpg"
         };
 
-        //string str = "D:\\Wallpaper\\Slideshow\\wallpaper.jpg";
         RemoteMessage.Send(Msg.SetBackgroundV2, 3, entity);
     }
 
@@ -53,29 +57,73 @@ class ApiTest
 
     public static void StartMotion(int type, string mtn)
     {
-        ModelEntity entity = new ModelEntity();
-        entity.id = 0;
-        entity.type = type;
-        entity.mtn = mtn;
+        var entity = new ModelEntity()
+        {
+            id = 0,
+            type = type,
+            mtn = mtn
+        };
 
         RemoteMessage.Send(Msg.StartMotion, 4, entity);
     }
 
     public static void SetPosition()
     {
-        ModelEntity entity = new ModelEntity();
-        entity.id = 0;
-        entity.posX = 0;
-        entity.posY = 100;
+        var entity = new ModelEntity()
+        {
+            id = 0,
+            posX = 0,
+            posY = 100
+        };
 
         RemoteMessage.Send(Msg.SetPosition, 5, entity);
     }
 
+    public static void PlaySound()
+    {
+        var entity = new SoundEntity()
+        {
+            id = 0,
+            channel = 0,
+            type = 0,
+            sound = "C:\\test.mp3"
+        };
+
+        RemoteMessage.Send(Msg.PlaySound, 7, entity);
+    }
+    public static void PlaySoundBinary()
+    {
+        var entity = new SoundEntity()
+        {
+            id = 0,
+            channel = 0,
+            type = 1
+        };
+
+        var bytes = File.ReadAllBytes("C:\\test.mp3");
+        entity.sound = Convert.ToBase64String(bytes);
+
+        RemoteMessage.Send(Msg.PlaySound, 7, entity);
+    }
+
+    public static void StopSound()
+    {
+        var entity = new SoundEntity()
+        {
+            id = 0,
+            channel = 0
+        };
+
+        RemoteMessage.Send(Msg.StopSound, 8, entity);
+    }
+
     public static void SetExpression()
     {
-        ModelEntity entity = new ModelEntity();
-        entity.id = 0;
-        entity.expId = 1;
+        ModelEntity entity = new ModelEntity()
+        {
+            id = 0,
+            expId = 1
+        };
 
         RemoteMessage.Send(Msg.SetExpression, 6, entity);
     }

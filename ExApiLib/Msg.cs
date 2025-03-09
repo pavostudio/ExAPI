@@ -19,6 +19,8 @@ namespace PavoStudio.ExApi
         public const int NextExpression = 13301;
         public const int ClearExpression = 13302;
         public const int SetPosition = 13400;
+        public const int PlaySound = 13500;
+        public const int StopSound = 13501;
         public const int SetEffect = 14000;
         public const int AddEffect = 14100;
         public const int RemoveEffect = 14200;
